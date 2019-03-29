@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+.mapa-tile {
+  display: none;
+  background-image: url("./bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #00000094;
+  background-blend-mode: overlay;
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  color: white;
+}
+
+.mapa-tile.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+/* Arrows */
+
+.mapa-arrow {
+  display: flex;
+  cursor: pointer;
+  font-size: 4em;
+  color: white;
+  text-shadow: 10px 4px 4px #000000ed;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapa-arrow:hidden {
+  display: none !important;
+}
+
+.arrow-up {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+}
+.arrow-down {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.arrow-left {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+}
+.arrow-right {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 100%;
+}
+
+/* Minimap */
+
+#mapa-nav {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.mapa-nav__row {
+  display: flex;
+}
+
+.mapa-nav__row > div {
+  width: 70px;
+  height: 40px;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.mapa-nav__block {
+  background: #ffffff85;
+  cursor: pointer;
+}
+
+.mapa-nav__block.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapa-nav__block.active:after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: lightpulse 1.5s infinite;
+  background: #ff4646;
+}
+
+/* Utils */
+
+.header {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.text {
+  max-width: 600px;
+}
+
+.hide {
+  display: none !important;
+}
+
+@keyframes lightpulse {
+  0% {
+    box-shadow: 0 0 20px 0px #ff0000e0;
+  }
+
+  50% {
+    box-shadow: 0 0 20px 8px #ff0000e0;
+  }
+
+  100% {
+    box-shadow: 0 0 20px 0px #ff0000e0;
+  }
+}
